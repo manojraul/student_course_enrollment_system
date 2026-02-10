@@ -1,0 +1,31 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<h3>Students</h3>
+<table class="table table-bordered">
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>Mob</th>
+    <th>Courses</th>
+    <th>Actions</th>
+</tr>
+{% for s in students %}
+<tr>
+    <td>{{ s.name }}</td>
+    <td>{{ s.age }}</td>
+    <td>{{ s.email }}</td>
+    <td>{{ s.mobile }}</td>
+    <td>
+        {% for c in s.courses.all %}
+            <span class="badge bg-info">{{ c.name }}</span>
+        {% endfor %}
+    </td>
+    <td>
+        <a href="{% url 'edit_student' s.id %}" class="btn btn-warning btn-sm">Edit</a>
+        <a href="{% url 'delete_student' s.id %}" class="btn btn-danger btn-sm">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

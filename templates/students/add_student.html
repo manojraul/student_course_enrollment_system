@@ -1,0 +1,9 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<h3>Add / Edit Student</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success">Save</button>
+</form>
+{% endblock %}

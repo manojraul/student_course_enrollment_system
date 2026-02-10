@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+db.sqlite3
+*.log
+.env
+
+# Virtual environment
+manoj/
+env/
+venv/
+Scripts/
+Lib/
+Include/
+pyvenv.cfg
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
